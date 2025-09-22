@@ -1,1 +1,1 @@
-# CGU ScanPay
+# CGU Receiptify
