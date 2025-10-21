@@ -19,9 +19,9 @@
             --text-primary: #111827;
             --text-secondary: #6B7280;
         }
-        
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
@@ -30,9 +30,9 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        
+
         .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        
+
         .header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -43,7 +43,6 @@
             position: relative;
             overflow: hidden;
         }
-        
         .header::before {
             content: '';
             position: absolute;
@@ -54,7 +53,6 @@
             background: rgba(255,255,255,0.05);
             border-radius: 50%;
         }
-        
         .header::after {
             content: '';
             position: absolute;
@@ -65,31 +63,30 @@
             background: rgba(255,255,255,0.03);
             border-radius: 50%;
         }
-        
+
+        /* === Logo sans fond ni cadre === */
         .logo {
-            width: 100px;
-            height: 100px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
+            background: transparent;
+            width: auto;
+            height: auto;
+            border-radius: 0;
             margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
+            display: block;      /* centre via margin auto */
+            overflow: visible;
+            box-shadow: none;
         }
-        
         .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 20px;
+            display: block;
+            height: 72px;        /* ajuste la taille si besoin */
+            width: auto;
+            object-fit: contain; /* ne rogne pas le logo */
+            background: transparent;
+            border-radius: 0;
         }
-        
+
         .header h1 { font-size: 32px; font-weight: 900; margin-bottom: 12px; position: relative; z-index: 1; }
         .header p { font-size: 16px; opacity: 0.9; font-weight: 400; position: relative; z-index: 1; }
-        
+
         .language-toggle {
             position: fixed;
             top: 20px;
@@ -101,7 +98,6 @@
             z-index: 1000;
             display: flex;
         }
-        
         .lang-btn {
             background: transparent;
             border: none;
@@ -116,7 +112,7 @@
         }
         .lang-btn.active { background: var(--primary); color: white; }
         .lang-btn:hover:not(.active) { background: var(--background); color: var(--text-primary); }
-        
+
         .nav-tabs {
             display: flex;
             background: var(--surface);
@@ -125,7 +121,6 @@
             margin-bottom: 24px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
-        
         .nav-tab {
             flex: 1;
             text-align: center;
@@ -147,10 +142,10 @@
             box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
         }
         .nav-tab:not(.active):hover { background: var(--background); color: var(--text-primary); }
-        
+
         .tab-content { display: none; }
         .tab-content.active { display: block; }
-        
+
         .section {
             background: var(--surface);
             margin-bottom: 24px;
@@ -159,7 +154,6 @@
             box-shadow: 0 2px 12px rgba(0,0,0,0.06);
             border: 1px solid rgba(0,0,0,0.04);
         }
-        
         .section h2 {
             color: var(--primary);
             font-size: 28px;
@@ -176,13 +170,12 @@
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 2px;
         }
-        
         .section h3 { color: var(--text-primary); font-size: 20px; font-weight: 800; margin: 32px 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid var(--background); }
         .section h4 { color: var(--text-primary); font-size: 18px; font-weight: 700; margin: 24px 0 12px 0; }
         .section p { margin-bottom: 16px; text-align: justify; font-size: 15px; line-height: 1.7; color: var(--text-primary); }
         .section ul, .section ol { margin-left: 20px; margin-bottom: 20px; }
         .section li { margin-bottom: 8px; font-size: 15px; line-height: 1.6; }
-        
+
         .highlight {
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(124, 58, 237, 0.05));
             padding: 24px;
@@ -192,7 +185,7 @@
             position: relative;
         }
         .highlight::before { content: '💡'; position: absolute; top: 20px; right: 20px; font-size: 24px; }
-        
+
         .warning {
             background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(245, 158, 11, 0.05));
             border: 1px solid rgba(239, 68, 68, 0.2);
@@ -203,7 +196,7 @@
         }
         .warning::before { content: '⚠️'; position: absolute; top: 20px; right: 20px; font-size: 24px; }
         .warning h4 { color: var(--error); margin-bottom: 12px; }
-        
+
         .contact-info {
             background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(37, 99, 235, 0.05));
             border: 1px solid rgba(16, 185, 129, 0.2);
@@ -213,7 +206,7 @@
             position: relative;
         }
         .contact-info::before { content: '📧'; position: absolute; top: 20px; right: 20px; font-size: 24px; }
-        
+
         .footer {
             text-align: center;
             padding: 40px 20px;
@@ -222,7 +215,7 @@
             margin-top: 60px;
             border-top: 1px solid rgba(0,0,0,0.1);
         }
-        
+
         .stats-row {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -232,7 +225,7 @@
         .stat-card { background: var(--background); padding: 20px; border-radius: 12px; text-align: center; border: 1px solid rgba(0,0,0,0.05); }
         .stat-value { font-size: 24px; font-weight: 800; color: var(--primary); display: block; }
         .stat-label { font-size: 12px; color: var(--text-secondary); font-weight: 500; margin-top: 4px; }
-        
+
         @media (max-width: 768px) {
             .container { padding: 12px; }
             .section { padding: 24px 20px; }
@@ -258,29 +251,29 @@
             <h1 id="header-title">Receiptify</h1>
             <p id="header-subtitle">Votre gestionnaire intelligent de documents financiers</p>
         </div>
-        
+
         <div class="nav-tabs">
             <button class="nav-tab active" onclick="showTab('terms')" id="terms-tab">Conditions d'utilisation</button>
             <button class="nav-tab" onclick="showTab('privacy')" id="privacy-tab">Politique de confidentialité</button>
         </div>
-        
+
         <!-- CONDITIONS D'UTILISATION -->
         <div id="terms" class="tab-content active">
             <div class="section">
                 <h2 id="terms-title">Conditions Générales d'Utilisation</h2>
-                
+
                 <div class="highlight">
                     <p><strong id="last-update">Dernière mise à jour :</strong> 22 septembre 2025</p>
                     <p><strong id="version-label">Version :</strong> V1</p>
                 </div>
-                
+
                 <h3 id="section-1-title">§ 1. Dispositions Générales</h3>
                 <p id="section-1-content">Les présentes conditions générales (ci-après "Conditions") définissent les règles d'utilisation du service de l'application mobile Receiptify, développée et opérée par mcsEdition.</p>
                 <p id="section-1-content-2">L'utilisation du Service implique l'acceptation pleine et entière des présentes Conditions Générales. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser notre Service.</p>
-                
+
                 <h3 id="section-2-title">§ 2. Description du Service</h3>
                 <p id="section-2-content">Receiptify est une application de numérisation et de gestion intelligente de documents financiers (tickets de caisse, factures, amendes, etc.) utilisant l'intelligence artificielle pour extraire et analyser automatiquement les données.</p>
-                
+
                 <h4 id="service-includes">Le Service comprend notamment :</h4>
                 <ul id="service-list">
                     <li>La numérisation par photo ou import d'images</li>
@@ -290,7 +283,7 @@
                     <li>Le stockage sécurisé dans le cloud</li>
                     <li>Un assistant conversationnel pour analyser vos documents</li>
                 </ul>
-                
+
                 <h3 id="section-3-title">§ 3. Quotas et limitations</h3>
                 <div class="warning">
                     <h4 id="free-usage">Utilisation gratuite</h4>
@@ -307,7 +300,7 @@
                     <p id="quota-reset">Les quotas sont remis à zéro chaque jour à minuit (UTC).</p>
                     <p id="quota-premium">Les offres Premium arrivent prochainement.</p>
                 </div>
-                
+
                 <h3 id="section-4-title">§ 4. Obligations de l'utilisateur</h3>
                 <p id="user-obligations">L'utilisateur s'engage à :</p>
                 <ul id="obligations-list">
@@ -317,10 +310,10 @@
                     <li>Respecter les droits de propriété intellectuelle</li>
                     <li>Ne pas utiliser le Service à des fins frauduleuses</li>
                 </ul>
-                
+
                 <h3 id="section-5-title">§ 5. Responsabilité</h3>
                 <p id="responsibility-content">mcsEdition met tout en œuvre pour assurer la fiabilité du Service, mais ne peut garantir l'exactitude à 100% des données extraites. L'utilisateur demeure responsable de la vérification des informations extraites.</p>
-                
+
                 <div class="contact-info">
                     <h4 id="contact-title">Contact</h4>
                     <p id="contact-content">Pour toute question concernant ces conditions d'utilisation :</p>
@@ -328,25 +321,25 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- POLITIQUE DE CONFIDENTIALITÉ -->
         <div id="privacy" class="tab-content">
             <div class="section">
                 <h2 id="privacy-title">Politique de Confidentialité</h2>
-                
+
                 <div class="highlight">
                     <p><strong id="privacy-last-update">Dernière mise à jour :</strong> 22 septembre 2025</p>
                     <p><strong id="privacy-version-label">Version :</strong> V1</p>
                 </div>
-                
+
                 <p id="privacy-intro">Chez Receiptify, nous prenons la protection de vos données personnelles très au sérieux. Cette politique de confidentialité explique comment nous collectons, utilisons, stockons et protégeons vos informations.</p>
-                
+
                 <h3 id="privacy-section-1-title">§ 1. Responsable du Traitement</h3>
                 <p id="privacy-section-1-content">mcsEdition est le responsable du traitement de vos données personnelles.</p>
                 <p><strong>Contact :</strong> <a href="mailto:receiptify@mcsedition.org">receiptify@mcsedition.org</a></p>
-                
+
                 <h3 id="privacy-section-2-title">§ 2. Données Collectées</h3>
-                
+
                 <h4 id="document-data-title">Données de documents :</h4>
                 <ul id="document-data-list">
                     <li>Images de tickets et factures que vous numérisez</li>
@@ -354,13 +347,13 @@
                     <li>Catégorisation automatique de vos dépenses</li>
                     <li>Notes personnelles que vous ajoutez</li>
                 </ul>
-                
+
                 <h4 id="technical-data-title">Données techniques :</h4>
                 <ul id="technical-data-list">
                     <li>Type d'appareil et système d'exploitation</li>
                     <li>Identifiant unique de l'appareil (pour la gestion des quotas)</li>
                 </ul>
-                
+
                 <h4 id="usage-data-title">Données d'utilisation :</h4>
                 <ul id="usage-data-list">
                     <li>Historique de navigation dans l'application</li>
@@ -368,7 +361,7 @@
                     <li>Statistiques d'usage anonymisées</li>
                     <li>Logs de connexion (conservés 30 jours maximum)</li>
                 </ul>
-                
+
                 <h3 id="privacy-section-3-title">§ 3. Utilisation des Données</h3>
                 <p id="data-usage-intro">Nous utilisons vos données uniquement pour :</p>
                 <ul id="data-usage-list">
@@ -378,7 +371,7 @@
                     <li>Assurer la sécurité de nos services</li>
                     <li>Respecter nos obligations légales</li>
                 </ul>
-                
+
                 <h3 id="privacy-section-4-title">§ 4. Stockage et Sécurité</h3>
                 <div class="stats-row">
                     <div class="stat-card">
@@ -386,9 +379,9 @@
                         <div class="stat-label" id="encryption-label">Chiffrement</div>
                     </div>
                 </div>
-                
+
                 <p id="security-content">Vos données sont chiffrées en transit et au repos. Nous utilisons des serveurs sécurisés pour protéger vos informations.</p>
-                
+
                 <h3 id="privacy-section-5-title">§ 5. Vos Droits</h3>
                 <p id="rights-intro">Vous disposez des droits suivants :</p>
                 <ul id="rights-list">
@@ -398,19 +391,19 @@
                     <li><strong>Droit à la portabilité</strong> : récupérer vos données</li>
                     <li><strong>Droit d'opposition</strong> : vous opposer au traitement</li>
                 </ul>
-                
+
                 <h3 id="privacy-section-6-title">§ 6. Conservation des Données</h3>
                 <ul id="retention-list">
                     <li>Documents numérisés : conservés tant que vous utilisez l'application</li>
                     <li>Données techniques : supprimées après 12 mois d'inactivité</li>
                     <li>Logs de sécurité : conservés 30 jours maximum</li>
                 </ul>
-                
+
                 <div class="warning">
                     <h4 id="no-sharing-title">Aucun Partage</h4>
                     <p id="no-sharing-content">Nous ne vendons, ne louons, ni ne partageons jamais vos données personnelles avec des tiers à des fins commerciales.</p>
                 </div>
-                
+
                 <div class="contact-info">
                     <h4 id="privacy-contact-title">Contact DPO</h4>
                     <p id="privacy-contact-content">Pour exercer vos droits ou pour toute question :</p>
@@ -419,7 +412,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="footer">
         <p id="footer-text">© 2025 mcsEdition. Tous droits réservés.</p>
         <p id="footer-Receiptify">Receiptify - Votre gestionnaire intelligent de documents financiers</p>
@@ -646,19 +639,19 @@
             currentLanguage = lang;
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelector(`button[onclick="switchLanguage('${lang}')"]`).classList.add('active');
-            
+
             const t = translations[lang];
             Object.keys(t).forEach(key => {
                 const element = document.getElementById(key);
                 if (element) element.textContent = t[key];
             });
-            
+
             const lists = listContents[lang];
             Object.keys(lists).forEach(listId => {
                 const listElement = document.getElementById(listId);
                 if (listElement) listElement.innerHTML = lists[listId].map(item => `<li>${item}</li>`).join('');
             });
-            
+
             document.documentElement.lang = lang;
         }
 
