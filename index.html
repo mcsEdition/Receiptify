@@ -64,24 +64,27 @@
             border-radius: 50%;
         }
 
-        /* === Logo sans fond ni cadre === */
+        /* === Logo centré dans un carré blanc (coins arrondis) === */
         .logo {
-            background: transparent;
-            width: auto;
-            height: auto;
-            border-radius: 0;
+            width: 100px;
+            height: 100px;
+            background: #FFFFFF;   /* fond blanc demandé */
+            border-radius: 20px;
             margin: 0 auto 20px;
-            display: block;      /* centre via margin auto */
-            overflow: visible;
-            box-shadow: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.08); /* léger relief (optionnel) */
         }
         .logo img {
-            display: block;
-            height: 72px;        /* ajuste la taille si besoin */
-            width: auto;
-            object-fit: contain; /* ne rogne pas le logo */
+            width: 100%;
+            height: 100%;
+            object-fit: contain;   /* évite de rogner le logo */
             background: transparent;
-            border-radius: 0;
+            border-radius: 20px;
         }
 
         .header h1 { font-size: 32px; font-weight: 900; margin-bottom: 12px; position: relative; z-index: 1; }
